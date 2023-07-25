@@ -9,12 +9,12 @@ FROM employees as emp
     ON (emp.emp_no = slry.emp_no)
 ORDER BY emp.emp_no;
 
--- List the first name, last name, and hire date for the employees who were hired in 1986.
+-- List of the first name, last name, and hire date for the employees who were hired in 1986.
 SELECT first_name, last_name, hire_date
 FROM employees
 WHERE hire_date BETWEEN '1986-01-01' AND '1986-12-31';
 
--- List the manager of each department along with their department number, department name, employee number, last name, and first name (2 points)
+-- List the manager of each department along with their department number, department name, employee number, last name, and first name
 SELECT  dment.dept_no,
         dment.dept_name,
         depman.emp_no,
@@ -26,7 +26,7 @@ FROM dept_manager AS depman
     INNER JOIN employees AS emp
         ON (depman.emp_no = emp.emp_no);
 
--- List the department number for each employee along with that employee’s employee number, last name, first name, and department name (2 points)
+-- List the department number for each employee along with that employee’s employee number, last name, first name, and department name 
 SELECT  emp.emp_no,
         emp.last_name,
         emp.first_name,
@@ -38,13 +38,13 @@ FROM employees AS emp
         ON (depte.dept_no = dment.dept_no)
 ORDER BY emp.emp_no;
 
--- List first name, last name, and sex of each employee whose first name is Hercules and whose last name begins with the letter B (2 points)
+-- List first name, last name, and sex of each employee whose first name is Hercules and whose last name begins with the letter B
 SELECT first_name, last_name, birth_date, sex
 FROM employees
 WHERE first_name = 'Hercules'
 AND last_name LIKE 'B%';
 
--- List each employee in the Sales department, including their employee number, last name, and first name (2 points)
+-- List each employee in the Sales department, including their employee number, last name, and first name
 SELECT  emp.emp_no,
         emp.last_name,
         emp.first_name,
@@ -57,7 +57,7 @@ FROM employees AS emp
 WHERE dment.dept_name = 'Sales'
 ORDER BY emp.emp_no;
 
--- List each employee in the Sales and Development departments, including their employee number, last name, first name, and department name (4 points)
+-- List each employee in the Sales and Development departments, including their employee number, last name, first name, and department name
 SELECT  emp.emp_no,
         emp.last_name,
         emp.first_name,
@@ -70,7 +70,7 @@ FROM employees AS emp
 WHERE dment.dept_name IN ('Sales', 'Development')
 ORDER BY emp.emp_no;
 
--- List the frequency counts, in descending order, of all the employee last names (that is, how many employees share each last name) (4 points)
+-- List the frequency counts, in descending order, of all the employee last names (that is, how many employees share each last name)
 SELECT last_name, COUNT(last_name)
 FROM employees
 GROUP BY last_name
