@@ -42,7 +42,7 @@ For the data analysis phase, I executed SQL queries to extract specific informat
 8. Frequency counts of employee last names in descending order:
   
 
-Please refer to the actual codefor more detailed information.
+Please refer to the actual code for more detailed information.
  ![Snippet Result 8](/erd.png)
 
 

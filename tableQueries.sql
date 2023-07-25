@@ -1,4 +1,4 @@
--- List the employee number, last name, first name, sex, and salary of each employee (2 points)
+-- Employee number, last name, first name, sex, and salary of each employee.
 SELECT  emp.emp_no,
         emp.last_name,
         emp.first_name,
@@ -9,7 +9,7 @@ FROM employees as emp
     ON (emp.emp_no = slry.emp_no)
 ORDER BY emp.emp_no;
 
--- List the first name, last name, and hire date for the employees who were hired in 1986 (2 points)
+-- List the first name, last name, and hire date for the employees who were hired in 1986.
 SELECT first_name, last_name, hire_date
 FROM employees
 WHERE hire_date BETWEEN '1986-01-01' AND '1986-12-31';
